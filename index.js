@@ -22,6 +22,10 @@
 
 var version = require('./version');
 
+var WebMapServiceImageryProvider = require('terriajs-cesium/Source/Scene/WebMapServiceImageryProvider');
+var GetFeatureInfoFormat = require('terriajs-cesium/Source/Scene/GetFeatureInfoFormat');
+var ImageryLayerFeatureInfo = require('terriajs-cesium/Source/Scene/ImageryLayerFeatureInfo');
+
 var configuration = {
     terriaBaseUrl: 'build/TerriaJS',
     cesiumBaseUrl: undefined, // use default
@@ -113,6 +117,17 @@ var terria = new Terria({
     cesiumBaseUrl: configuration.cesiumBaseUrl,
     regionMappingDefinitionsUrl: configuration.regionMappingDefinitionsUrl,
     analytics: new GoogleAnalytics()
+});
+
+var formats = WebMapServiceImageryProvider.DefaultGetFeatureInfoFormats.map(function(format) {
+    if (format.type !== 'text') { return format; }
+    else return new GetFeatureInfoFormat('text', 'text/html', function(d) {
+        var i = new ImageryLayerFeatureInfo();
+        i.description = 'foobar';
+        i.data = d;
+        i.name = 'foobar2';
+        return i;
+    });
 });
 
 // We'll put the entire user interface into a DOM element called 'ui'.
