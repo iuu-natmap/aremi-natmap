@@ -1,3 +1,12 @@
+* Created a Boundaries -> Cadastre and Land Tenure subcategory and moved layers into it.
+* Put in a simple feature info template for the Electricity Inf. -> Transmission -> Distance to Trans Lines layer to show a sentence with the distance.
+* Updated the Electricity Inf. -> Generation -> Small Scale Installations data and layer info pages.
+* Added the Google URL Shortener for the Share feature.
+* Added the ABS 2011 Census layers to the Population category.
+* Adjusted the home view for all layers in the Boundary category.
+* Added the ACMA Radio Licenses layer to the Infrastructure -> Communications category.
+* Added the Geoscience Australia Northern Australia Land Tenure layers to the Boundaries category.
+* Renamed and reorded some entries in the catalog.
 * Added the Landgate Western Australia Electricity and Cadastre layer.
 * Changed to the Data61 logo.
 * Added a development system disclaimer when the app detects that it is not hosted on a nationalmap.gov.au host.

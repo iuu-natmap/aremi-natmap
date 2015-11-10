@@ -19,8 +19,8 @@
     "proj4js-defs": "^0.0.1",
     "request": "^2.55.0",
     "supervisor": "^0.6.0",
-    "terriajs": "git://github.com/TerriaJS/terriajs#cc611bdce282ea254bb6e81d2deca409d2a6c6a3",
-    "terriajs-cesium": "1.11.1",
+    "terriajs": "git://github.com/TerriaJS/terriajs#6a8c6e250a9e6e2db4a83e3043e249b1cb0ef033",
+    "terriajs-cesium": "1.14.1",
     "yargs": "^3.8.0"
   },
   "devDependencies": {
@@ -39,6 +39,7 @@
     "gulp-jsoncombine": "^1.0.2",
     "gulp-less": "^3.0.3",
     "gulp-rename": "^1.2.2",
+    "gulp-shell": "^0.5.1",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.4",
