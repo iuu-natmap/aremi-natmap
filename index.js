@@ -42,7 +42,7 @@ var isCommonMobilePlatform = require('terriajs/lib/Core/isCommonMobilePlatform')
 var GoogleAnalytics = require('terriajs/lib/Core/GoogleAnalytics');
 
 var OgrCatalogItem = require('terriajs/lib/Models/OgrCatalogItem');
-import DisclaimerHandler from 'terriajs/lib/ReactViewModels/DisclaimerHandler';
+//import DisclaimerHandler from 'terriajs/lib/ReactViewModels/DisclaimerHandler';
 import defined from 'terriajs-cesium/Source/Core/defined';
 
 
@@ -80,7 +80,7 @@ terria.error.addEventListener(e => {
     });
 });
 
-const disclaimerHandler = new DisclaimerHandler(terria, viewState);
+//const disclaimerHandler = new DisclaimerHandler(terria, viewState);
 
 terria.start({
     // If you don't want the user to be able to control catalog loading via the URL, remove the applicationUrl property below
@@ -118,7 +118,8 @@ terria.start({
         var globalBaseMaps = createGlobalBaseMapOptions(terria, configuration.bingMapsKey);
 
         var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
-        selectBaseMap(terria, allBaseMaps, 'Positron (Light)', true);
+        //selectBaseMap(terria, allBaseMaps, 'Positron (Light)', true);
+				selectBaseMap(terria, allBaseMaps, 'Australian Wave Atlas', true);
 
         // Add the disclaimer, if specified
         if (defined(terria.configParameters.globalDisclaimer)) {
