@@ -37,10 +37,6 @@ var registerCustomComponentTypes = require('terriajs/lib/Models/registerCustomCo
 // var registerAnalytics = require('terriajs/lib/Models/registerAnalytics');
 var raiseErrorToUser = require('terriajs/lib/Models/raiseErrorToUser');
 
-var GoogleUrlShortener = require('terriajs/lib/Models/GoogleUrlShortener');
-var isCommonMobilePlatform = require('terriajs/lib/Core/isCommonMobilePlatform');
-var GoogleAnalytics = require('terriajs/lib/Core/GoogleAnalytics');
-
 var OgrCatalogItem = require('terriajs/lib/Models/OgrCatalogItem');
 //import DisclaimerHandler from 'terriajs/lib/ReactViewModels/DisclaimerHandler';
 import defined from 'terriajs-cesium/Source/Core/defined';
