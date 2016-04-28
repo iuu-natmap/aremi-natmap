@@ -15,13 +15,12 @@ rm -rf wwwroot/build
 npm install
 npm install
 npm install
-gulp sass
 gulp release
 
 mkdir -p target
 tar czf ${TARGET} \
+  serverconfig.json \
+  package.json \
   node_modules \
   wwwroot \
-  run_server.sh \
-  stop_server.sh \
 && echo && echo "Finished package: ${TARGET}"
