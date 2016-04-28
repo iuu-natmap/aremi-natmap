@@ -34,7 +34,7 @@ var updateApplicationOnHashChange = require('terriajs/lib/ViewModels/updateAppli
 var updateApplicationOnMessageFromParentWindow = require('terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow');
 var UserInterface = require('./UserInterface.jsx');
 var ViewState = require('terriajs/lib/ReactViewModels/ViewState').default;
-import DisclaimerHandler from 'terriajs/lib/ReactViewModels/DisclaimerHandler';
+//import DisclaimerHandler from 'terriajs/lib/ReactViewModels/DisclaimerHandler';
 import defined from 'terriajs-cesium/Source/Core/defined';
 
 // Tell the OGR catalog item where to find its conversion service.  If you're not using OgrCatalogItem you can remove this.
