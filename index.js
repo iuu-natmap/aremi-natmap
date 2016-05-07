@@ -70,6 +70,18 @@ terria.error.addEventListener(e => {
     });
 });
 
+terria.disclaimerListener = (catalogMember, callback) => {
+                var message = catalogMember.initialMessage;
+                var options = {
+                    title: defined(message.title) ? message.title : catalogMember.layers,
+                    confirmText: 'OK',
+                    width: 600,
+                    height: 550,
+                    message: message.content
+                };
+    viewState.notifications.push(options);
+};
+
 // If we're running in dev mode, disable the built style sheet as we'll be using the webpack style loader.
 // Note that if the first stylesheet stops being nationalmap.css then this will have to change.
 if (process.env.NODE_ENV !== "production" && module.hot) {
