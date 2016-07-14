@@ -6,12 +6,51 @@ http://nationalmap.gov.au/renewables/
 
 
 ### In the next version of AREMI
+* Added the layer "Renewable Energy -> Bioenergy -> Western Australia -> Oil Mallee stems" from the Department of Agriculture and Food, Western Australia.
+* Added the layer "Renewable Energy -> Wind -> ACT - Mean Wind Speed at 80 metres" from the ACT Environment and Planning Directorate.
+* Added the layers "Renewable Energy -> Bioenergy -> Biomass *" from the Rural Industries Research and Development Corporation.
+
+
+### Version 2016-06-22
+* Added the layers "Electricity Inf. -> Residential -> Household Energy Consumption 2010-2012" visualised from the Australian Bureau of Statistics "4670.0 - Household Energy Consumption Survey, Australia: Summary of Results, 2012".
+* Added a more noticeable popup asking if the user would like to try the NewUI.
+* Don't display the year on the timeseries control for the "Renewable Energy -> Solar -> Monthly climatology of daily exposure" layers.
+* Added a legend for the layer "Topography -> Water -> Floods -> Queensland -> Brisbane City Council 1974 Flood".
+* Changed to show only filename and not the entire URL as the link in the feature info for "Renewable Energy -> Wind -> WAsP LIB files".
+* Added more downloadable data formats on the Info pages for the "Renewable Energy -> Wind" layers.
+
+
+### Version 2016-05-23
+* Added the layer "Renewable Energy -> Wind -> WAsP LIB files" from DNV GL.
+* Updated "Electricity Inf. -> Generation -> Diesel generators - South Australia" to use data from the Data.SA CKAN server.
+* Moved the layers "Renewable Energy -> Bioenergy -> Queensland -> Sugarcane" down to "Renewable Energy -> Bioenergy -> Sugarcane" as they also include NSW data.
+* Added a link to the new prototype user interface so that people can try it out.
+* Added the layer "Renewable Energy -> Bioenergy -> New South Wales -> Harvest Residues Planted Softwoods Bathurst" from the Department of Primary Industries - New South Wales Government.
+* Updated to the latest [NationalMap version 2016-05-13c](https://github.com/NICTA/nationalmap/blob/2016-05-13c/CHANGES.md).
+* Renamed "Renewable Energy -> ARENA Funded projects" to ARENA Projects because some projects listed have not received ARENA funding.
+* Updated CER SGU data in the category "Electricity Inf. -> Generation -> Small Scale Installations" to be current as of May 2016.
+* Added the layer "Renewable Energy -> Bioenergy -> Western Australia -> Cereal straw" from the Department of Agriculture and Food, Western Australia.
+
+
+### Version 2016-05-11
+* Added the layers in the category "Infrastructure -> Liquid Fuel Facilities" from Geoscience Australia.
+* Added the layer "Infrastructure -> National Major Desalination Plants" from Geoscience Australia.
+* Migrated the layers "Infrastructure -> Damwalls" and "Renewable Energy -> Hydro -> Dam Walls" to the new "National Major Dam Walls" service from Geoscience Australia.
+* Added the layer "Renewable Energy -> Wave -> Hillshaded Bathymetry and Topography" from Geoscience Australia.
+* Migrated the Roads and Railways layers in the "Infrastructure -> Transport" to a new Geosience Australia service.
+* Added the layers in the category "Renewable Energy -> Bioenergy -> Victoria" from Sustainability Victoria.
+* Moved the "Boundaries -> Environmental areas" to be its own "Environment" top level category.
+* Added the layers in "Renewable Energy -> Bioenergy -> Queensland -> Sugarcane" from the Department of Science, Information Technology and Innovation of the State of Queensland Government.
+* Added the layer "Boundaries -> Native Title Determinations" from the National Native Title Tribunal.
+* Added the layer "Electricity Inf. -> Generation -> Diesel generators - South Australia" from RenewablesSA.
+* Added the layer "Renewable Energy -> ARENA Funded projects" with public data from ARENA about the projects they fund.
 * Added the layer "Topography -> Aerial/Satellite Imagery -> New South Wales" from Land and Property Information NSW.
 * Added the layers in the category "Boundaries -> Cadastre and Land Tenure -> By State -> Queensland" from the Queensland Government - Department of Natural Resources and Mines.
 * Added the layers in the category "Topography -> Water -> Floods -> Queensland" from the Queensland Government.
 * Added the layer "Topography -> Aerial/Satellite Imagery -> Queensland" from the Queensland Government - Department of Natural Resources and Mines.
 * Added the WPS functions and reference area for the "Renewable Energy -> Wave -> Australian Wave Energy Atlas" group.
 * Added an experimental CSV export service for clicked points to the "Renewable Energy -> Solar -> Solar Satellite DNI - 2014" layer.
+* Points shown for "Electricity Infrastructure -> Generation -> Current Power Generation - NEM" are now scaled by their value when it makes sense, and columns which don't make sense to choropleth by have been removed as options.
 
 
 ### Version 2016-04-22

@@ -1,27 +1,38 @@
 {
     "allowProxyFor" : [
-        "information.qld.gov.au",
-        "industry.nsw.gov.au",
-        "noaa.gov",
-        "nasa.gov",
-        "environment.gov.au",
-        "thelist.tas.gov.au",
         "aemo.com.au",
-        "landgate.wa.gov.au",
-        "bom.gov.au",
-        "aurin.org.au",
-        "nicta.com.au",
-        "ga.gov.au",
-        "csiro.au",
-        "arcgis.com",
-        "argo.jcommops.org",
-        "www.abc.net.au",
-        "mapsengine.google.com",
-        "s3-ap-southeast-2.amazonaws.com",
-        "adelaidecitycouncil.com",
-        "www.dptiapps.com.au",
-        "nci.org.au",
         "aodn.org.au",
-        "imos.org.au"
-    ]
+        "arcgis.com",
+        "aurin.org.au",
+        "csiro.au",
+        "gov.au",
+        "imos.org.au",
+        "mapsengine.google.com",
+        "nasa.gov",
+        "nci.org.au",
+        "nicta.com.au",
+        "noaa.gov",
+        "www.dptiapps.com.au",
+        "www.googleapis.com"
+    ],
+    "feedback": {
+        "userAgent": "TerriaBot (TerriaJS Feedback)",
+        "issuesUrl": "https://api.github.com/repos/TerriaJS/NationalMap-Feedback/issues",
+        "accessToken": "FEEDBACK_ACCESS_TOKEN"
+    },
+    "trustProxy": "uniquelocal",
+
+    "shareUrlPrefixes": {
+        "": {
+            "service": "googleUrlShortener",
+            "apikey": "GOOGLE_URL_SHAREKEY"
+        },
+        "s": {
+            "service": "s3",
+            "region": "ap-southeast-2",
+            "bucket": "SHARE_BUCKET",
+            "keyLength": 16
+        }
+    },
+    "newShareUrlPrefix": "s"
 }

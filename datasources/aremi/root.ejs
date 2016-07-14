@@ -1,6 +1,7 @@
 {
   "corsDomains": [
-    "services.aremi.nicta.com.au"
+    "services.aremi.nicta.com.au",
+    "waveatlas.marine.csiro.au"
   ],
   "homeCamera": {
     "west": 112,
@@ -24,6 +25,7 @@
             <% include custodian/Australian_Photovoltaic_Institute/Live_Solar_PV %>,
             <% include custodian/Clean_Energy_Regulator/Small_Scale_Installations %>,
             <% include custodian/Geoscience_Australia/Power_Stations %>,
+            <% include custodian/RenewablesSA/Diesel_generators %>,
           ]
         },
         {
@@ -56,6 +58,14 @@
             <% include custodian/Institute_for_Sustainable_Futures/DANCE2/DANCE2 %>,
           ]
         },
+        {
+          "name": "Residential",
+          "type": "group",
+          "preserveOrder": true,
+          "items": [
+            <% include custodian/Australian_Bureau_of_Statistics/Consumption %>,
+          ]
+        },
       ]
     },
     {
@@ -80,12 +90,86 @@
           "type": "group",
           "items": [
             <% include custodian/DNVGL/Wind %>,
+            <% include custodian/DNVGL/WAsP-LIB-files %>,
+            <% include custodian/ACT_Environment_and_Planning_Directorate/Windmap %>,
           ]
         },
         {
           "name": "Bioenergy",
           "type": "group",
+          "preserveOrder": true,
           "items": [
+            {
+              "name": "New South Wales",
+              "type": "group",
+              "items": [
+                <% include custodian/NSW_Department_of_Primary_Industries/Bathurst_Planted_Softwoods_Harvest_Residues %>,
+              ]
+            },
+            {
+              "name": "Victoria",
+              "type": "group",
+              "items": [
+                {
+                  "name": "Agricultural and forestry residues",
+                  "type": "group",
+                  "items": [
+                    <% include custodian/Sustainability_Victoria/Agricultural_and_forestry_residues %>,
+                  ]
+                },
+                {
+                  "name": "Animal waste",
+                  "type": "group",
+                  "items": [
+                    <% include custodian/Sustainability_Victoria/Animal_waste %>,
+                  ]
+                },
+                {
+                  "name": "Food manufacturing waste",
+                  "type": "group",
+                  "items": [
+                    <% include custodian/Sustainability_Victoria/Food_manufacturing_waste %>,
+                  ]
+                },
+                {
+                  "name": "Food retail waste (post consumer)",
+                  "type": "group",
+                  "items": [
+                    <% include custodian/Sustainability_Victoria/Food_retail_waste %>,
+                  ]
+                },
+                {
+                  "name": "Forestry and sawmill residues",
+                  "type": "group",
+                  "items": [
+                    <% include custodian/Sustainability_Victoria/Forestry_and_sawmill_residues %>,
+                  ]
+                },
+                {
+                  "name": "Waste-water biosolids",
+                  "type": "group",
+                  "items": [
+                    <% include custodian/Sustainability_Victoria/Waste-water_biosolids %>,
+                  ]
+                },
+                {
+                  "name": "Municipal and other organic manufacturing waste",
+                  "type": "group",
+                  "items": [
+                    <% include custodian/Sustainability_Victoria/Other_organic_manufacturing_waste %>,
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Western Australia",
+              "type": "group",
+              "items": [
+                <% include custodian/Department_of_Agriculture_and_Food_Western_Australia/Bio %>,
+              ]
+            },
+            <% include custodian/Department_of_Science_Information_Technology_and_Innovation/Sugarcane %>,
+            <% include custodian/RIRDC/Biomass %>,
             <% include custodian/Geoscience_Australia/Waste_Management_Facilities %>,
           ]
         },
@@ -103,6 +187,8 @@
             <% var catchmentId = "54a55472" %>
             <% include custodian/Bureau_of_Meteorology/Catchment %>,
             <% include custodian/Geoscience_Australia/Hydrography %>,
+            <% var damWallsId = "54a558b4" %>
+            <% include custodian/Geoscience_Australia/National_Major_Dam_Walls %>,
           ]
         },
         {
@@ -112,12 +198,6 @@
             {
               "name": "Australian Wave Energy Atlas",
               "type": "group",
-              "preserveOrder": true,
-			        "initialMessage": {
-							   "key": "AWAVEAGuidance",
-			           "title": "Australian Wave Energy Atlas",
-                 "content": "If using the Analysis Tools please display the study area as this is the area that the analysis tools will operate in."
-              },
               "items": [
                 <% include custodian/CSIRO_OandA/WaveAtlas %>,
               ]
@@ -125,6 +205,7 @@
             <% include custodian/Geoscience_Australia/Bathymetry_Seabed %>,
           ]
         },
+        <% include custodian/Australian_Renewable_Energy_Agency/Project_Locations %>,
       ]
     },
     {
@@ -134,6 +215,10 @@
         <% include custodian/Geoscience_Australia/Infrastructure_layers %>,
         <% include custodian/Geoscience_Australia/Major_Ports %>,
         <% include custodian/Geoscience_Australia/Pipelines %>,
+        <% var damWallsId = "54a558c8" %>
+        <% include custodian/Geoscience_Australia/National_Major_Dam_Walls %>,
+        <% include custodian/Geoscience_Australia/National_Major_Desalination_Plants %>,
+        <% include custodian/Geoscience_Australia/Liquid_Fuel_Facilities %>,
         {
           "name": "Communications",
           "type": "group",
@@ -149,6 +234,13 @@
             <% include custodian/Geoscience_Australia/Transport_layers %>,
           ]
         },
+      ]
+    },
+    {
+      "name": "Environment",
+      "type": "group",
+      "items": [
+        <% include custodian/Department_of_Environment/Web_Services %>,
       ]
     },
     {
@@ -180,17 +272,11 @@
             }
           ]
         },
-        {
-          "name": "Environmental Areas",
-          "type": "group",
-          "items": [
-            <% include custodian/Department_of_Environment/Web_Services %>,
-          ]
-        },
         <% include custodian/Geoscience_Australia/Defence_Restricted_Areas %>,
         <% include custodian/Australian_Bureau_of_Statistics/Boundaries %>,
         <% include custodian/Department_of_Environment/Protected_Areas %>,
         <% include custodian/Department_of_Environment/Commonwealth_Marine_Regions %>,
+        <% include custodian/National_Native_Title_Tribunal/Native_Titles %>,
       ]
     },
     {

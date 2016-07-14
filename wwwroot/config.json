@@ -4,13 +4,15 @@
         "proxy/_60s/http://static.aremi.nicta.com.au/init2.json"
     ],
     "parameters": {
+        "feedbackUrl": "feedback",
         "corsProxyBaseUrl": "proxy/",
         "conversionServiceBaseUrl": "convert/",
-        "proj4ServiceBaseUrl": "proj4/",
+        "proj4ServiceBaseUrl": "proj4def/",
         "bingMapsKey": null,
         "googleUrlShortenerKey": null,
         "googleAnalyticsKey": null,
         "googleAnalyticsOptions": null,
+        "autoPlay": false,
         "disclaimer": {
             "text": "Disclaimer: AREMI must not be used for navigation or precise spatial analysis",
             "url": "About.html"
@@ -20,6 +22,10 @@
             "confirmationRequired": true,
             "title": "Disclaimer"
         },
+        "printDisclaimer":{
+            "text":"ARENA, Data61 and Geoscience Australia (“We”) make no representations or warranties regarding the accuracy or completeness of any content or the product in connection with AREMI. We disclaim all responsibility and all liability (including without limitation, liability in negligence, for errors or omissions) for all expenses, loss, damage and costs which you might incur as a result of the information displayed on AREMI and your use of it. AREMI must not be used for navigation or precise spatial analysis.",
+            "url": "#"
+        },
         "developerAttribution": {
             "text": "Data61",
             "link": "http://www.csiro.au/en/Research/D61"
@@ -27,7 +33,7 @@
         "appName": "AWAVEA",
         "supportEmail": "awavea@csiro.au",
         "brandBarElements": [
-            "<div class='ausglobe-title-aremi'> <a href='http://arena.gov.au/' target='_blank'><img class='left'  src='images/ARENA-logo2.png' alt='Australian Renewable Energy Agency' /></a> <a href='https://www.nicta.com.au/' target='_blank'><img class='right' src='images/DATA61_CSIRO.png' alt='NICTA' width='55px' height='33px'/></a> <br/> <strong>Australian Renewable Energy</strong> <br/> <small>Mapping Infrastructure</small> <br/> <span><a target='_blank' href='https://github.com/NICTA/aremi-natmap/blob/master/Changelog.md#version-{{version}}'>Version: {{version}}</a></span> </div>"
+            "<div class='ausglobe-title-aremi'><div class='ausglobe-title-aremi-md'><a href='http://arena.gov.au/' target='_blank'><img class='left'  src='images/ARENA-logo2.png' alt='Australian Renewable Energy Agency' /></a> <a href='https://www.nicta.com.au/' target='_blank'><img class='right' src='images/DATA61_CSIRO.png' alt='Data61' width='55px' height='33px'/></a> <br/> <strong>Australian Renewable Energy</strong> <br/> <small>Mapping Infrastructure</small> <br/> <span><a target='_blank' href='https://github.com/NICTA/aremi-natmap/blob/master/Changelog.md#version-{{version}}'>Version: {{version}}</a></span> </div><div class='ausglobe-title-aremi-sm'><strong>AREMI</strong></div></div>"
         ]
     }
 }

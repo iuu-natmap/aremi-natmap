@@ -8,9 +8,17 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var path = require('path');
 
-gulp.task('build', ['merge-datasources', 'build-app']);
-gulp.task('release', ['merge-datasources', 'release-app']);
-gulp.task('watch', ['watch-terriajs-assets', 'watch-datasources', 'watch-app']);
+var minNode = require('./package.json').engines.node;
+if (!require('semver').satisfies(process.version, minNode)) {
+    console.log('Terria requires Node.js ' + minNode + ' to build. Please update your version of Node.js, delete your node_modules directory' +
+        ', then run npm install and gulp again.');
+    process.exit();
+}
+
+gulp.task('build', ['clean', 'merge-datasources', 'copy-terriajs-assets', 'build-app']);
+gulp.task('release', ['clean', 'merge-datasources', 'copy-terriajs-assets', 'release-app']);
+gulp.task('watch', ['watch-datasource-aremi', 'watch-app']);
+
 gulp.task('default', ['lint', 'build']);
 
 var watchOptions = {
@@ -31,7 +39,6 @@ gulp.task('release-app', ['write-version'], function(done) {
     var webpackConfig = require('./buildprocess/webpack.config.js')(false);
 
     runWebpack(webpack, Object.assign({}, webpackConfig, {
-        devtool: 'source-map',
         plugins: [
             new webpack.optimize.UglifyJsPlugin(),
             new webpack.optimize.DedupePlugin(),
@@ -44,7 +51,7 @@ gulp.task('watch-app', function(done) {
     var fs = require('fs');
     var watchWebpack = require('terriajs/buildprocess/watchWebpack');
     var webpack = require('webpack');
-    var webpackConfig = require('./buildprocess/webpack.config.js')(true);
+    var webpackConfig = require('./buildprocess/webpack.config.js')(true, false);
 
     fs.writeFileSync('version.js', 'module.exports = \'Development Build\';');
     watchWebpack(webpack, webpackConfig, done);
@@ -87,18 +94,13 @@ gulp.task('copy-editor', function() {
         .pipe(gulp.dest('./wwwroot/editor'));
 });
 
-
-gulp.task('watch-datasources', ['merge-datasources'], function() {
-    return gulp.watch([
-        'datasources/*.json',
-        'datasources/00_National_Data_Sets/*.json',
-        'datasources/aremi/*.json'
-    ], ['merge-datasources']);
-});
-
 gulp.task('styleguide', function(done) {
     var childExec = require('child_process').exec;
     childExec('./node_modules/kss/bin/kss-node ./node_modules/terriajs/lib/Sass ./wwwroot/styleguide --template ./wwwroot/styleguide-template --css ./../build/nationalmap.css', undefined, done);
+});
+
+gulp.task('watch-datasource-aremi', function() {
+    return gulp.watch('datasources/aremi/*.json', [ 'merge-datasources' ]);
 });
 
 gulp.task('lint', function() {
@@ -129,9 +131,10 @@ gulp.task('write-version', function() {
 
 // AREMI uses the EJS template engine to build the AREMI init file
 gulp.task('merge-datasources', function() {
+    var fs = require('fs');
     var ejs = require('ejs');
-
     var fn = 'datasources/aremi/root.ejs';
+    var fs = require('fs');
     var template = fs.readFileSync(fn,'utf8');
     // use EJS to process
     var result = ejs.render(template, null, {filename: fn});
@@ -213,6 +216,8 @@ function combine(object1, object2) {
     }, {});
 }
 
+gulp.task('default', ['lint', 'build']);
+
 function onError(e) {
     if (e.code === 'EMFILE') {
         console.error('Too many open files. You should run this command:\n    ulimit -n 2048');
@@ -288,3 +293,90 @@ gulp.task('diagnose', function() {
     }
 });
 
+gulp.task('make-package', function() {
+    var argv = require('yargs').argv;
+    var fs = require('fs-extra');
+    var spawnSync = require('child_process').spawnSync;
+
+    var packageName = argv.packageName || (process.env.npm_package_name + '-' + spawnSync('git', ['describe']).stdout.toString().trim());
+    var packagesDir = path.join('.', 'deploy', 'packages');
+
+    if (!fs.existsSync(packagesDir)) {
+        fs.mkdirSync(packagesDir);
+    }
+
+    var packageFile = path.join(packagesDir, packageName + '.tar.gz');
+
+    var workingDir = path.join('.', 'deploy', 'work');
+    if (fs.existsSync(workingDir)) {
+        fs.removeSync(workingDir);
+    }
+
+    fs.mkdirSync(workingDir);
+
+    var copyOptions = {
+        preserveTimestamps: true
+    };
+
+    fs.copySync('wwwroot', path.join(workingDir, 'wwwroot'), copyOptions);
+    fs.copySync('node_modules', path.join(workingDir, 'node_modules'), copyOptions);
+
+    if (argv.serverConfigOverride) {
+        var serverConfig = JSON.parse(fs.readFileSync('devserverconfig.json', 'utf8'));
+        var serverConfigOverride = JSON.parse(fs.readFileSync(argv.serverConfigOverride, 'utf8'));
+        var productionServerConfig = mergeConfigs(serverConfig, serverConfigOverride);
+        fs.writeFileSync(path.join(workingDir, 'productionserverconfig.json'), JSON.stringify(productionServerConfig, undefined, '  '));
+    } else {
+        fs.writeFileSync(path.join(workingDir, 'productionserverconfig.json'), fs.readFileSync('devserverconfig.json', 'utf8'));
+    }
+
+    if (argv.clientConfigOverride) {
+        var clientConfig = JSON.parse(fs.readFileSync(path.join('wwwroot', 'config.json'), 'utf8'));
+        var clientConfigOverride = JSON.parse(fs.readFileSync(argv.clientConfigOverride, 'utf8'));
+        var productionClientConfig = mergeConfigs(clientConfig, clientConfigOverride);
+        fs.writeFileSync(path.join(workingDir, 'wwwroot', 'config.json'), JSON.stringify(productionClientConfig, undefined, '  '));
+    }
+
+    var tarResult = spawnSync('tar', [
+        'czvf',
+        path.join('..', 'packages', packageName + '.tar.gz')
+    ].concat(fs.readdirSync(workingDir)), {
+        cwd: workingDir,
+        stdio: 'inherit',
+        shell: false
+    });
+    if (tarResult.status !== 0) {
+        throw new gutil.PluginError('tar', 'External module exited with an error.', { showStack: false });
+    }
+});
+
+gulp.task('clean', function() {
+    var fs = require('fs-extra');
+
+    // // Remove build products
+    fs.removeSync(path.join('wwwroot', 'build'));
+});
+
+function mergeConfigs(original, override) {
+    var result = Object.assign({}, original);
+
+    if (typeof original === 'undefined') {
+        original = {};
+    }
+
+    for (var name in override) {
+        if (!override.hasOwnProperty(name)) {
+            continue;
+        }
+
+        if (Array.isArray(override[name])) {
+            result[name] = override[name];
+        } else if (typeof override[name] === 'object') {
+            result[name] = mergeConfigs(original[name], override[name]);
+        } else {
+            result[name] = override[name];
+        }
+    }
+
+    return result;
+}
