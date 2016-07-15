@@ -114,7 +114,8 @@ terria.start({
         var globalBaseMaps = createGlobalBaseMapOptions(terria, configuration.bingMapsKey);
 
         var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
-        selectBaseMap(terria, allBaseMaps, 'Positron (Light)', true);
+        //selectBaseMap(terria, allBaseMaps, 'Positron (Light)', true);
+        selectBaseMap(terria, allBaseMaps, 'Australian Wave Atlas');
 
         // Add the disclaimer, if specified
         if (defined(terria.configParameters.globalDisclaimer)) {
