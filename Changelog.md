@@ -10,6 +10,9 @@ http://nationalmap.gov.au/renewables/
 * Added the layer "Renewable Energy -> Wind -> ACT - Mean Wind Speed at 80 metres" from the ACT Environment and Planning Directorate.
 * Added the layers "Renewable Energy -> Bioenergy -> Biomass *" from the Rural Industries Research and Development Corporation.
 
+### Version 2016-07-15
+* Added useful GetFeatureInfo redirect to WPS (pull request 1503 on newui)
+* Added AWAVEA branding - help still to come
 
 ### Version 2016-06-22
 * Added the layers "Electricity Inf. -> Residential -> Household Energy Consumption 2010-2012" visualised from the Australian Bureau of Statistics "4670.0 - Household Energy Consumption Survey, Australia: Summary of Results, 2012".
