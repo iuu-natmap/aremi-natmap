@@ -1,9 +1,33 @@
 Change Log
 ==========
 
+### 2016-07-20a
+
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 4.1.2.  Significant changes relevant to NationalMap users include:
+  * Fixed a bug that prevented sharing from working in Internet Explorer.
+
+### 2016-07-20
+
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 4.1.1.  Significant changes relevant to NationalMap users include:
+  * Worked around a problem in the Websense Web Filter that caused it to block access to some of the TerriaJS Web Workers due to a URL in the license text in a comment in a source file.
+  * Made the column title for time-based CSV exports from chart default to 'date'
+  * Stopped the CSV creation webworker from being run multiple times on viewing a chart.
+  * Removed the empty circles from non-selected base maps on the Map settings panel.
+  * Prevented text from being selected when dragging the compass control.
+  * Stopped IE9 from setting bizarre inline dimensions on custom branding images.
+  * Fixed workbench reordering in browsers other than Chrome.
+  * URLs on the dataset info page are now auto-selected when clicked, making them easier to copy.
+
 ### 2016-07-15
 
 * Catalog (init) files can now be stored as .ejs files in /datasources, rendered by the EJS templating library. See comments in gulpfile.js.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 4.0.2.  Significant changes relevant to NationalMap users include:
+  * A brand new user interface, incorporating user feedback and the results of usability testing!
+  * `CswCatalogGroup` will now include Web Processing Services from the catalog if configured with `includeWps` set to true.
+  * `WebMapServiceCatalogItem` will now detect ncWMS servers and set isNcWMS to true.
+  * Uses a new mechanism for storing the data associated with the Share feature, avoid URL length limits.
+  * Added partial support for the SDMX-JSON format.
+
 ### 2016-06-15
 
 * Added a prominent link to the preview of the new UI.

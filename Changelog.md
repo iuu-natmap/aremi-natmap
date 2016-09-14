@@ -4,8 +4,26 @@ This is a list of changes of the Australian Renewable Energy Mapping Infrastruct
 
 http://nationalmap.gov.au/renewables/
 
+### Version 2016-08-12
+* Upgrade to use latest [TerriaJS 4.2.0](https://github.com/TerriaJS/terriajs/blob/4.2.0/CHANGES.md) release.
+* Migrated all services previously hosted by Data61 to Geoscience Australia hosted infrastructure.
+* Migrated the "Renewable Energy -> Wave -> Bathymetry topography" layer to a new service URL on request from Geoscience Australia.
+* Added the layers in "Renewable Energy -> Bioenergy -> South Australia -> Existing Waste Stream" from RenewablesSA.
+* Improved the default colour ranges for the layers "Annual climatology of daily exposure" and "Monthly climatology of daily exposure" in the "Renewable Energy -> Solar" category.
+* Adding a distance measuring tool accessible by clicking the measuring icon on the right side of the map.
+* Added the three layers "Renewable Energy -> Geothermal -> NSW - Geothermal Temperature at depth" from the [Geological Survey of NSW, NSW Departmet of Industry](http://www.resourcesandenergy.nsw.gov.au/).
+* Added the layer "Renewable Energy -> Wind -> NSW - Wind Speed at 100 metres" with data from [DNV GL](https://www.dnvgl.com/) as sourced by the [Geological Survey of NSW, NSW Departmet of Industry](http://www.resourcesandenergy.nsw.gov.au/).
 
-### In the next version of AREMI
+
+### Version 2016-07-18b
+* Merge in the latest [NationalMap 2016-07-20](https://github.com/NICTA/nationalmap/blob/2016-07-20/CHANGES.md) and use [TerriaJS 4.1.2](https://github.com/TerriaJS/terriajs/blob/4.1.2/CHANGES.md) releases.
+
+
+### Version 2016-07-18
+* The NewUI has been released!
+* Added the layers "Harvest Residues Planted Softwoods Monaro" and "Harvest Residues Planted Softwoods Tumut" in the category "Renewable Energy -> Bioenergy -> New South Wales -> Forestry" from the Department of Primary Industries - New South Wales Government.
+* Added the layers "Crop Estimates by District", "Green Triangle Forestry", "Intensive Animal Husbandry and Production" and "Green Triangle Region Boundary" in the category "Renewable Energy -> Bioenergy -> South Australia" from RenewablesSA.
+* Merged in the latest [NationalMap 2016-07-15](https://github.com/NICTA/nationalmap/blob/2016-07-15/CHANGES.md) and [TerriaJS 4.0.2](https://github.com/TerriaJS/terriajs/blob/4.0.2/CHANGES.md) releases.
 * Added the layer "Renewable Energy -> Bioenergy -> Western Australia -> Oil Mallee stems" from the Department of Agriculture and Food, Western Australia.
 * Added the layer "Renewable Energy -> Wind -> ACT - Mean Wind Speed at 80 metres" from the ACT Environment and Planning Directorate.
 * Added the layers "Renewable Energy -> Bioenergy -> Biomass *" from the Rural Industries Research and Development Corporation.
