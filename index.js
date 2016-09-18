@@ -32,6 +32,7 @@ import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerS
 import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
 import ViewerMode from 'terriajs/lib/Models/ViewerMode';
 import defined from 'terriajs-cesium/Source/Core/defined';
+import defaultValue from 'terriajs-cesium/Source/Core/defaultValue';
 
 import render from './lib/Views/render';
 
@@ -49,7 +50,7 @@ registerCatalogMembers();
 registerAnalytics();
 
 terriaOptions.analytics = new GoogleAnalytics();
-terriaOptions.viewerMode = ViewerMode.CesiumEllipsoid;
+terriaOptions.viewerMode = defaultValue(configuration.viewerMode, ViewerMode.Leaflet);
 
 // Construct the TerriaJS application, arrange to show errors to the user, and start it up.
 var terria = new Terria(terriaOptions);
