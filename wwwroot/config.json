@@ -32,7 +32,7 @@
         },
         "appName": "AWAVEA",
         "supportEmail": "awavea@csiro.au",
-        "surveyLink": "https://docs.google.com/forms/d/1A4aiZYeuqYDEqhc1ils1tPYD4bU6px6SdW2HopA81UI/viewform",
+        "surveyLink": "https://docs.google.com/forms/d/e/1FAIpQLSf2Ge9tGb_bDzVJaTkZnm6lQ1LMAN0MPwJFMTMYBAIBI4R7Tw/viewform",
         "brandBarElements": [
             "<div class='ausglobe-title-aremi'><div class='ausglobe-title-aremi-md'><a href='http://arena.gov.au/' target='_blank'><img class='left'  src='images/ARENA-logo2.png' alt='Australian Renewable Energy Agency' /></a> <a href='https://www.nicta.com.au/' target='_blank'><img class='right' src='images/DATA61_CSIRO.png' alt='Data61' width='55px' height='33px'/></a> <br/> <strong>Australian Wave Energy Atlas</strong> <br/> <small>Australian Renewable Energy Mapping Infrastructure</small> <br/> <span><a target='_blank' href='https://github.com/awavea-newui/aremi-natmap/blob/newui-awavea/Changelog.md#version-{{version}}'>Version: {{version}}</a></span> </div><div class='ausglobe-title-aremi-sm'><strong>AREMI</strong></div></div>"
         ]
