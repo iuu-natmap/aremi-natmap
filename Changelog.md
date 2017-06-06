@@ -1,8 +1,8 @@
-### AREMI Changelog
+### AWAVEA Changelog
 
-This is a list of changes of the Australian Renewable Energy Mapping Infrastructure (AREMI). To use AREMI to access the dataset layers and features mentioned below please go to:
+This is a list of changes of the Australian Wave Energy Atlas (AWAVEA) and its base code in the Australian Renewable Energy Mapping Infrastructure (AREMI). To use AWAVEA directly to access the dataset layers and features mentioned below please go to:
 
-http://nationalmap.gov.au/renewables/
+http://awavea.csiro.au
 
 ### Version 2017-06-06
 
