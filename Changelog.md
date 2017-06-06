@@ -4,6 +4,11 @@ This is a list of changes of the Australian Renewable Energy Mapping Infrastruct
 
 http://nationalmap.gov.au/renewables/
 
+### Version 2017-06-06
+
+* Minor bug fixes - GetLegendGraphic wasn't beuing used correctly, escaped URLs to catalogue not working.
+* TerriaJS 4.2.1 with GetFeatureInfo redirect to WPS.
+
 ### Version 2016-08-12
 * Upgrade to use latest [TerriaJS 4.2.0](https://github.com/TerriaJS/terriajs/blob/4.2.0/CHANGES.md) release.
 * Migrated all services previously hosted by Data61 to Geoscience Australia hosted infrastructure.
