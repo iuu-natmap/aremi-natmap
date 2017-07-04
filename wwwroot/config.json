@@ -18,9 +18,9 @@
             "url": "About.html"
         },
         "globalDisclaimer": {
-            "enabled": true,
-            "confirmationRequired": true,
-            "title": "Disclaimer"
+            "enableOnLocalhost": true,
+            "hideUi": true,
+            "devHostRegex": "aremi.d61.io"
         },
         "printDisclaimer":{
             "text":"ARENA, Data61, CSIRO Oceans and Atmosphere and Geoscience Australia (“We”) make no representations or warranties regarding the accuracy or completeness of any content or the product in connection with AWAVEA. We disclaim all responsibility and all liability (including without limitation, liability in negligence, for errors or omissions) for all expenses, loss, damage and costs which you might incur as a result of the information displayed on AREMI and your use of it. AWAVEA must not be used for navigation or precise spatial analysis.",
@@ -28,7 +28,7 @@
         },
         "developerAttribution": {
             "text": "Data61",
-            "link": "http://www.csiro.au/en/Research/D61"
+            "link": "https://data61.csiro.au/"
         },
         "appName": "AWAVEA",
         "supportEmail": "awavea@csiro.au",

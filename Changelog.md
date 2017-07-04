@@ -9,6 +9,64 @@ http://awavea.csiro.au
 * Minor bug fixes - GetLegendGraphic wasn't beuing used correctly, escaped URLs to catalogue not working.
 * TerriaJS 4.2.1 with GetFeatureInfo redirect to WPS.
 
+
+### In the next version
+* Added the new layer "Electricity Infrastructure -> Network Opportunities -> Localised Network Data -> United Energy Network Limitations 2016" from United Energy.
+* Combined Landuser layers in "Renewable Energy -> Bioenergy -> South Australia" together with their respective quantity layers.
+
+### Version 2017-06-01
+* Added many new layers to the category "Renewable Energy -> Bioenergy -> South Australia" from RenewablesSA.
+
+### Version 2017-05-30b
+* Corrected the location of the Native Title Determinations layer.
+
+### Version 2017-05-04
+* Remove some bioenergy layers that are no longer required in the "Renewable Energy -> Bioenergy -> South Australia".
+* Update to [TerriaJS 5.1.1](https://github.com/TerriaJS/terriajs/blob/5.1.1/CHANGES.md).
+
+### Version 2017-04-24
+* Added download links in the feature info of the "Renewable Energy -> Solar -> Solar Satellite DNI & GHI" that allows the user to download the full 25 year timeseries once they have clicked on a point.
+* Defaulting to 3D Smooth globe.
+* Added many new layers to the category "Renewable Energy -> Bioenergy -> South Australia" from RenewablesSA.
+* Fixed some problems with the chart and download links in the feature info of the "Electricity Infrastructure -> Generation -> Current Power Generation - NEM" data.
+* Added a new Gas dataset to the "Electricity Infrastructure -> Generation -> Current Power Generation - NEM".
+* Added the layer "Renewable Energy -> Bioenergy -> Biogas Facilities" from the National Centre for Engineering in Agriculture, University of Southern Queensland.
+* Added the layers in "Renewable Energy -> Bioenergy -> Queensland -> Urban Waste" from the Department of Science, Information Technology and Innovation of the State of Queensland Government.
+* Added Feature Area in Hectares to the feature info for the "Boundaries -> Cadastre and Land Tenure -> Cadastral Parcels" data.
+* Update to [TerriaJS 5.1.0](https://github.com/TerriaJS/terriajs/blob/5.1.0/CHANGES.md).
+* Add more Cropping layers from NSW Department of Industry - Lands to the "Renewable Energy -> Bioenergy -> New South Wales -> Cropping" category.
+* Update the CER SGU data available in "Electricity Infrastructure -> Generation -> Small Scale Installations - CER".
+* Add data for the 2015-16 NGERS Designated Generation Facilities.
+
+### Version 2017-03-14
+* Update to [TerriaJS 4.10.4](https://github.com/TerriaJS/terriajs/blob/4.10.4/CHANGES.md) release to fix a problem affecting the "Electricity Infrastructure -> Generation -> Current Power Generation - NEM" layers.
+
+### Version 2017-02-22
+* Added many new layers in the category "Renewable Energy -> Bioenergy -> New South Wales" from NSW Department of Industry - Lands.
+* Fixed the link to the related map "NEII viewer" when the image is clicked.
+* Add GHI data to "Renewable Energy -> Solar -> Solar Satellite DNI & GHI" (-> click on map to see feature info).
+* Add NGERS Designated Generation Facilities data "Renewable Energy -> Generation -> NGERS Designated Generation Facilities (2014-15)" from CER
+
+### Version 2016-12-12
+* Add WA Seeweed Wrak layer to "Renewable Energy -> Bioenergy -> Western Australia"
+* Add project description to "Renewable Energy -> Bioenergy" for ABBA project
+* Update to [TerriaJS 4.7.1](https://github.com/TerriaJS/terriajs/blob/4.7.1/CHANGES.md) release.
+* Update to [TerriaJS-server 4.6.2](https://github.com/TerriaJS/terriajs-server/blob/2.6.2/CHANGES.md) release.
+
+### Version 2016-10-21a
+* Updated layers for Vic, Qld, Tas, NSW and WA in "Renewable Energy -> Bioenergy" ahead of Bioenergy Australia conference.
+* Updated color maps used for "Renewable Energy -> Bioenergy -> Western australia" layers.
+* Add Cadastral parcels for NT & ACT ("Boundaries -> Cadastre and Land Tenure -> By state -> ACT/ Northern Territory")
+* Several services have been updated to point to Geoscience Australia's new services
+    - "Renewable Energy -> Bio Energy -> Waste Management Facilities"
+    - "Renewable Energy -> Hydro -> Australian Hydrography"
+    - "Renewable Energy -> Wave -> Seabed features"
+    - "Renewable Energy -> Hydro -> River Regions"
+    - "Topography -> Water -> Australian Hydrography"
+    - "Topography -> Water -> River Regions"
+    - "Topography -> Land -> Land Cover"
+    - "Topography -> Land -> Geology"
+
 ### Version 2016-08-12
 * Upgrade to use latest [TerriaJS 4.2.0](https://github.com/TerriaJS/terriajs/blob/4.2.0/CHANGES.md) release.
 * Migrated all services previously hosted by Data61 to Geoscience Australia hosted infrastructure.

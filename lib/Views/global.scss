@@ -1,5 +1,11 @@
-@import "~terriajs/lib/Sass/StandardUserInterface";
+@import "~terriajs-variables";
+@import "~terriajs/lib/Sass/global/global";
 @import "../Styles/AREMI.scss";
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
 
 :global {
     .panel--getting-started .panel-content {
@@ -50,5 +56,10 @@
 				display: inline;
 			}
 		}
+	}
+  .tjs-feature-info-section__content {
+    table td {
+        padding: 5px;
+    }
 	}
 }
