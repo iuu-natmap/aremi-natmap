@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/TerriaJS/aremi-natmap"
+    "url": "http://github.com/awavea-newui/aremi-natmap"
   },
   "dependencies": {
     "terriajs-server": "^2.6.2"
@@ -43,7 +43,7 @@
     "semver": "^5.0.0",
     "style-loader": "^0.16.1",
     "svg-sprite-loader": "^0.3.0",
-    "terriajs": "5.1.1",
+    "terriajs": "git://github.com/awavea-newui/terriajs.git#master",
     "terriajs-catalog-editor": "^0.2.0",
     "terriajs-cesium": "1.31.1",
     "terriajs-schema": "latest",
