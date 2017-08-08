@@ -14,27 +14,28 @@
         "googleAnalyticsOptions": null,
         "autoPlay": false,
         "disclaimer": {
-            "text": "Disclaimer: AWAVEA must not be used for navigation or precise spatial analysis",
+            "text": "Disclaimer: IUU must not be used for navigation or precise spatial analysis",
             "url": "About.html"
         },
         "globalDisclaimer": {
-            "enableOnLocalhost": true,
+            "enabled" : false,
+            "enableOnLocalhost": false,
             "hideUi": true,
             "devHostRegex": "aremi.d61.io"
         },
         "printDisclaimer":{
-            "text":"ARENA, Data61, CSIRO Oceans and Atmosphere and Geoscience Australia (“We”) make no representations or warranties regarding the accuracy or completeness of any content or the product in connection with AWAVEA. We disclaim all responsibility and all liability (including without limitation, liability in negligence, for errors or omissions) for all expenses, loss, damage and costs which you might incur as a result of the information displayed on AREMI and your use of it. AWAVEA must not be used for navigation or precise spatial analysis.",
+            "text":"CSIRO Oceans and Atmosphere (“We”) make no representations or warranties regarding the accuracy or completeness of any content or the product in connection with IUU. We disclaim all responsibility and all liability (including without limitation, liability in negligence, for errors or omissions) for all expenses, loss, damage and costs which you might incur as a result of the information displayed on IUU and your use of it. IUU must not be used for navigation or precise spatial analysis.",
             "url": "#"
         },
         "developerAttribution": {
             "text": "Data61",
             "link": "https://data61.csiro.au/"
         },
-        "appName": "AWAVEA",
-        "supportEmail": "awavea@csiro.au",
-        "surveyLink": "https://docs.google.com/forms/d/e/1FAIpQLSf2Ge9tGb_bDzVJaTkZnm6lQ1LMAN0MPwJFMTMYBAIBI4R7Tw/viewform",
+        "appName": "IUU",
+        "supportEmail": "iuu@csiro.au",
+        "surveyLink": "",
         "brandBarElements": [
-            "<div class='ausglobe-title-aremi'><div class='ausglobe-title-aremi-md'><a href='http://arena.gov.au/' target='_blank'><img class='left'  src='images/ARENA-logo2.png' alt='Australian Renewable Energy Agency' /></a> <a href='https://www.nicta.com.au/' target='_blank'><img class='right' src='images/DATA61_CSIRO.png' alt='Data61' width='55px' height='33px'/></a> <br/> <strong>Australian Wave Energy Atlas</strong> <br/> <small>Australian Renewable Energy Mapping Infrastructure</small> <br/> <span><a target='_blank' href='https://github.com/awavea-newui/aremi-natmap/blob/master/Changelog.md#version-{{version}}'>Version: {{version}}</a></span> </div><div class='ausglobe-title-aremi-sm'><strong>AREMI</strong></div></div>"
+            "<div class='ausglobe-title-aremi'><strong>Illegal, Unreported and Unregulated Fishing</strong><br/><small>CSIRO Oceans & Atmosphere</small> <br/> <span><a target='_blank' href='https://github.com/iuu-natmap/aremi-natmap/blob/master/Changelog.md#version-{{version}}'>Version: {{version}}</a></span> </div></div>"
         ]
     }
 }
