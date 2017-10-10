@@ -1,0 +1,24 @@
+{
+  "id": "b766d7c7",
+  "name": "Analysis Tools",
+  "description": "This group contains the analysis tools that operate on IUU data.",
+  "url": "http://iuu-reporting.it.csiro.au/wps",
+  "type": "wps-getCapabilities",
+  "itemProperties": {
+    "contextItem": {
+      "name": "Analysis Study Area",
+      "description": "Show where it is possible to use the analytical functions of the IUU reporting site - the analytics will only function inside the highlighted area.",
+      "layers": "iuu:reporting_bounds",
+      "url": "http://oa-gis.csiro.au/geoserver/ows",
+      "type": "wms",
+      "legendUrls": [],
+      "rectangle": [
+        145.0,
+        -35.0,
+        179.0,
+        20.0
+      ],
+      <% include ../../../aremi/common/standard_properties %>
+    }
+  }
+}
